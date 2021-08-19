@@ -10,8 +10,8 @@ public class Main {
 
 		//PRIMEIRA ETAPA - CARRINHO
 		String bemVindoCliente = JOptionPane.showInputDialog("Bem-vindo cliente!"
-				+ "\nAperte 1 para escolher suas compras"
-				+ "\nAperte 2 se você quer cancelar essa operação");
+				+ "\nInforme 1 para escolher suas compras"
+				+ "\nInforme 2 se vocÃª quer cancelar essa operaÃ§Ã£o");
 		int option = Integer.parseInt(bemVindoCliente);
 
 		if (option == 1) {
@@ -20,13 +20,13 @@ public class Main {
 			while (opcao != 10) {
 				for (int i = 0; i < meuPedido.getCarrinho().length; i++) {
 					String escolhaDasRoupas = JOptionPane.showInputDialog("1. Camiseta Hora de Aventura (13 reais)"
-							+ "\n2. Camiseta O Incrível Mundo de Gumball (13 reais)"
+							+ "\n2. Camiseta O IncrÃ­vel Mundo de Gumball (13 reais)"
 							+ "\n3. Vestido cinza (38 reais)"
 							+ "\n4. Vestido preto (38 reais)"
 							+ "\n5. Jaqueta jeans azul claro (72 reais)"
 							+ "\n6. Cachecol (20 reais)"
-							+ "\n7. Calça jeans azul escuro (55 reais)"
-							+ "\n8. Calça jeans preta (55 reais)"
+							+ "\n7. CalÃ§a jeans azul escuro (55 reais)"
+							+ "\n8. CalÃ§a jeans preta (55 reais)"
 							+ "\n9. Shorts preto (37 reais)"
 							+ "\n10. Finalizar");
 					opcao = Integer.parseInt(escolhaDasRoupas);
@@ -51,56 +51,56 @@ public class Main {
 				}
 			}
 		} else if (option == 2) {
-			System.out.println("Volte sempre!");
+			JOptionPane.showMessageDialog(null, "Volte sempre!");
 		} else {
-			System.out.println("Opcão inválida!");
+			JOptionPane.showMessageDialog(null, "OpcÃ£o invÃ¡lida!");
 		}
 
 		if (option == 1) {
 		//SEGUNDA ETAPA -- DADOS PESSOAIS DO CLIENTE
-		String dadosPessoaisCliente = JOptionPane.showInputDialog("Ok! Seu carrinho está cheio!"
-				+ "\nAgora é hora de informar seus dados pessoais"
-				+ "\nAperte 1 para começar"
-				+ "\nAperte 2 se você quer cancelar essa operação");
+		String dadosPessoaisCliente = JOptionPane.showInputDialog("Ok! Seu carrinho estÃ¡ cheio!"
+				+ "\nAgora Ã© hora de informar seus dados pessoais"
+				+ "\nAperte 1 para comeÃ§ar"
+				+ "\nAperte 2 se vocÃª quer cancelar essa operaÃ§Ã£o");
 		int um = Integer.parseInt(dadosPessoaisCliente);
 
 		if (um == 1) {
 			String nome = JOptionPane.showInputDialog("Informe o seu nome completo"
-					+ " nos parâmetros: (exemplo: José da Silva Oliveira)");
-			String endereco = JOptionPane.showInputDialog("Informe o endereço de entrega "
-					+ "junto com o complemento nos parâmetros: "
+					+ " nos parÃ¢metros: (exemplo: JosÃ© da Silva Oliveira)");
+			String endereco = JOptionPane.showInputDialog("Informe o endereÃ§o de entrega "
+					+ "junto com o complemento nos parÃ¢metros: "
 					+ " (exemplo: Rua Tal, XX. Bairro Tal)");
-			String cep = JOptionPane.showInputDialog("Informe o cep nos seguintes parâmetros: "
+			String cep = JOptionPane.showInputDialog("Informe o cep nos seguintes parÃ¢metros: "
 					+ "XXXXX-XX");
-			String cpf = JOptionPane.showInputDialog("Informe o cpf nos seguintes parâmetros: "
+			String cpf = JOptionPane.showInputDialog("Informe o cpf nos seguintes parÃ¢metros: "
 					+ " XXX.XXX.XXX-XX");
 			
 			Cliente cliente = new Cliente(nome, endereco, cpf, cep);
 			meuPedido.setCliente(cliente);
 		} else if (um == 2) {
-			System.out.println("Volte sempre!");
+			JOptionPane.showMessageDialog(null, "Volte sempre!");
 		} else {
-			System.out.println("Opção inválida");
+			JOptionPane.showMessageDialog(null, "OpÃ§Ã£o invÃ¡lida");
 		}
 		
 		if (um == 1) {
 		//TERCEIRA ETAPA -- PAGAMENTO
 		String pagamento = JOptionPane.showInputDialog("Dados pessoais preenchidos!"
-				+ " Agora só falta pagar."
+				+ " Agora sÃ³ falta pagar."
 				+ "\nEscolha uma forma de pagamento: "
-				+ "\n1. Cartão de Crédito"
-				+ "\n2. Cartão de Débito"
-				+ "\n\n3. Aperte 3 se você quiser cancelar a compra");
+				+ "\n1. CartÃ£o de CrÃ©dito"
+				+ "\n2. CartÃ£o de DÃ©bito"
+				+ "\n\n3. Aperte 3 se vocÃª quiser cancelar a compra");
 		int opcaoCartao = Integer.parseInt(pagamento);
 
 		if(opcaoCartao == 1) {
-			String numeroDoCartao = JOptionPane.showInputDialog("Informe o número do cartão: "
-					+ " nos seguintes parâmetros: XXXX XXXX XXXX XXXX");
+			String numeroDoCartao = JOptionPane.showInputDialog("Informe o nÃºmero do cartÃ£o: "
+					+ " nos seguintes parÃ¢metros: XXXX XXXX XXXX XXXX");
 
 			FormaDePagamento pagamentoCliente = new FormaDePagamento();
 			pagamentoCliente.setNumeroCartao(numeroDoCartao);
 			
-			String parcelas = JOptionPane.showInputDialog("Escolha em quantas parcelas você quer fazer: "
+			String parcelas = JOptionPane.showInputDialog("Escolha em quantas parcelas vocÃª quer fazer: "
 					+ "\n1 X " + valorTotalDaCompra
 					+ "\n2 X " + valorTotalDaCompra/2 + " sem juros"
 					+ "\n3 X " + valorTotalDaCompra/3 + " sem juros"
@@ -110,19 +110,19 @@ public class Main {
 					+ "\n7 X " + valorTotalDaCompra/7 + " sem juros");
 			int qndDeParcelas = Integer.parseInt(parcelas);
 
-			String notaFiscal = JOptionPane.showInputDialog("Se você quiser a nota fiscal da sua compra aperte 1"
-					+ "\nSe você quiser apenas finalizar a compra aperte 2");
+			String notaFiscal = JOptionPane.showInputDialog("Se vocÃª quiser a nota fiscal da sua compra aperte 1"
+					+ "\nSe vocÃª quiser apenas finalizar a compra aperte 2");
 			int opcaoNotaFiscal = Integer.parseInt(notaFiscal);
 
 			if (opcaoNotaFiscal == 1) {
 				JOptionPane.showMessageDialog(null, "----NOTA FISCAL----"
 												+ "\nCliente: "
 												+ "\nNome: " + meuPedido.getCliente().getNomeDoCliente()
-												+ "\nEndereço de entrega: " + meuPedido.getCliente().getEnderecoDeEntrega()
+												+ "\nEndereÃ§o de entrega: " + meuPedido.getCliente().getEnderecoDeEntrega()
 												+ "\nCEP: " + meuPedido.getCliente().getCep()
 												+ "\nCPF: " + meuPedido.getCliente().getCpf()
 												+ "\n"
-												+ "\nCompra com cartão de crédito"
+												+ "\nCompra com cartÃ£o de crÃ©dito"
 												+ " terminado em " + pagamentoCliente.getNumeroCartao().subSequence(15, 19)
 												+ "\nParcelado em " 
 												+ qndDeParcelas + " vezes de "
@@ -134,50 +134,49 @@ public class Main {
 				}
 												
 			} else if (opcaoNotaFiscal == 2) {
-				System.out.println("Parabéns! Você finalizou a sua compra, agora é só esperar!");
+				JOptionPane.showMessageDialog(null, "ParabÃ©ns! VocÃª finalizou a sua compra, agora Ã© sÃ³ esperar!");
 			} else {
-				System.out.println("Opção inválida");
+				JOptionPane.showMessageDialog(null, "OpÃ§Ã£o invÃ¡lida");
 			}
 
 		} else if (opcaoCartao == 2) {
-			String numeroDoCartao = JOptionPane.showInputDialog("Informe o número do cartão: "
-					+ " nos seguintes parâmetros: XXXX XXXX XXXX XXXX");
+			String numeroDoCartao = JOptionPane.showInputDialog("Informe o nÃºmero do cartÃ£o: "
+					+ " nos seguintes parÃ¢metros: XXXX XXXX XXXX XXXX");
 
 			FormaDePagamento pagamentoCliente = new FormaDePagamento();
 			pagamentoCliente.setNumeroCartao(numeroDoCartao);
 			
-			String notaFiscal = JOptionPane.showInputDialog("Se você quiser a nota fiscal da sua compra aperte 1"
-					+ "\nSe você quiser apenas finalizar a compra aperte 2");
+			String notaFiscal = JOptionPane.showInputDialog("Se vocÃª quiser a nota fiscal da sua compra aperte 1"
+					+ "\nSe vocÃª quiser apenas finalizar a compra aperte 2");
 			int opcaoNotaFiscal = Integer.parseInt(notaFiscal);
 
 			if (opcaoNotaFiscal == 1) {
-				System.out.println("----NOTA FISCAL----");
-				System.out.println("Cliente: ");
-				System.out.println("Nome: " + meuPedido.getCliente().getNomeDoCliente());
-				System.out.println("Endereço de entrega: " + meuPedido.getCliente().getEnderecoDeEntrega());
-				System.out.println("CEP: " + meuPedido.getCliente().getCep());
-				System.out.println("CPF: " + meuPedido.getCliente().getCpf()
-						+ "\n");
-				System.out.println("Compra com cartão de débito"
-						+ " terminado em " + pagamentoCliente.getNumeroCartao().subSequence(15,19));
-				System.out.println("TOTAL R$ " + valorTotalDaCompra);
-				System.out.println();
-				System.out.println("---ITENS---");
+				JOptionPane.showMessageDialog(null, "----NOTA FISCAL----"
+									+ "\nCliente: "
+									+ "\nNome: " + meuPedido.getCliente().getNomeDoCliente()
+									+ "\nEndereÃ§o de entrega: " + meuPedido.getCliente().getEnderecoDeEntrega()
+									+ "\nCEP: " + meuPedido.getCliente().getCep()
+									+ "\nCPF: " + meuPedido.getCliente().getCpf()
+									+ "\n"
+									+ "\nCompra com cartÃ£o de dÃ©bito"
+									+ " terminado em " + pagamentoCliente.getNumeroCartao().subSequence(15,19)
+									+ "\nTOTAL R$ " + valorTotalDaCompra);
 				for (int i = 0; i < roupasQueForamEscolhidas; i++) {
-					System.out.println(meuPedido.getCarrinho()[i].toString());
+					JOptionPane.showMessageDialog(null, "ITEM \n" + meuPedido.getCarrinho()[i].toString());
 				}
 			} else if (opcaoNotaFiscal == 2) {
-				System.out.println("Parabéns! Você finalizou a sua compra, agora é só esperar!");
+				JOptionPane.showMessageDialog(null, "ParabÃ©ns! VocÃª finalizou a sua compra, agora Ã© sÃ³ esperar!");
 			} else {
-				System.out.println("Opção inválida");
+				JOptionPane.showMessageDialog(null, "OpÃ§Ã£o invÃ¡lida");
 			}
 
 		} else if (opcaoCartao == 3) {
-			System.out.println("Volte sempre!");
+			JOptionPane.showMessageDialog(null, "Volte sempre!");
 		} else {
-			System.out.println("Opção Inválida!");
+			JOptionPane.showMessageDialog(null, "OpÃ§Ã£o InvÃ¡lida!");
 		}
 		}
 		}
 	}
 }
+
